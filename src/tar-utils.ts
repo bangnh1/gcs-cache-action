@@ -50,10 +50,10 @@ export async function createTar(
 
   const compressionArgs =
     compressionMethod === CompressionMethod.GZIP
-      ? ['-z']
+      ? ['-z -1']
       : compressionMethod === CompressionMethod.ZSTD_WITHOUT_LONG
-      ? ['--use-compress-program', 'zstd -T0']
-      : ['--use-compress-program', 'zstd -T0 --long=30'];
+      ? ['--use-compress-program', 'zstd -1 -T0']
+      : ['--use-compress-program', 'zstd -1 -T0 --long=30'];
 
   await exec.exec('tar', [
     '-c',
