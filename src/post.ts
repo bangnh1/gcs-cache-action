@@ -73,6 +73,8 @@ async function main() {
           metadata: {
             metadata: customMetadata,
           },
+          resumable: true,
+          chunkSize: 100 * 2 ** 20,
         });
       })
       .catch((err) => {
