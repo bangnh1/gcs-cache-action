@@ -58,9 +58,7 @@ export async function createTar(
   await exec.exec('tar', [
     '-c',
     ...compressionArgs,
-    '--posix',
     '-P',
-    '-1',
     '-f',
     archivePath,
     '-C',
